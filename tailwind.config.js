@@ -26,9 +26,10 @@ module.exports = {
       colors: {
         primary: "#1C1C22",
         accent: {
-          default: "#32B2DF",
-          hover: "#00E187"
-        }
+          default: "#0078D7",
+          hover: "#3FAAFF"
+        },
+        animation: "#002E57"
       },
       keyframes: {
         "accordion-down": {
