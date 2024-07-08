@@ -1,6 +1,6 @@
 "use client"
 
-import { FaHtml5, FaCss3, FaReact, FaPhp,FaPython, FaNodeJs, FaSwift, FaJs, FaFigma } from "react-icons/fa"
+import { FaHtml5, FaCss3, FaReact, FaPhp,FaPython, FaNodeJs, FaSwift, FaJs, FaFigma, FaDigitalOcean, FaGitAlt } from "react-icons/fa"
 import { SiTailwindcss, SiChakraui, SiNextdotjs } from "react-icons/si"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -8,25 +8,23 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { motion } from "framer-motion"
 
-const about = [
-  {
-    title: "About Me",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ex vero, inventore.",
-    info: [
-      {fieldName: "Name", fieldValue: "Andreas Alexander"},
-      {fieldName: "Phone", fieldValue: "(+62) 878 7819 7989"},
-      {fieldName: "Experience", fieldValue: "2+ Years"},
-      {fieldName: "Nationality", fieldValue: "Indonesian"},
-      {fieldName: "Email", fieldValue: "drealexander.dev@gmail.com"},
-      {fieldName: "Freelance", fieldValue: "Available"},
-      {fieldName: "Language", fieldValue: "English, Indonesian"},
-    ]
-  }
-]
+const about = {
+  title: "About Me",
+  description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ex vero, inventore.",
+  info: [
+    {fieldName: "Name", fieldValue: "Andreas Alexander"},
+    {fieldName: "Phone", fieldValue: "(+62) 878 7819 7989"},
+    {fieldName: "Experience", fieldValue: "2+ Years"},
+    {fieldName: "Nationality", fieldValue: "Indonesian"},
+    {fieldName: "Email", fieldValue: "drealexander.dev@gmail.com"},
+    {fieldName: "Freelance", fieldValue: "Available"},
+    {fieldName: "Language", fieldValue: "English, Indonesian"},
+  ]
+}
 
 const experience = {
   title: "My Experience",
-  description: "My Experience including my own . Suscipit ex vero, inventore.",
+  description: "My Experience that consists of working experience and contests that I've attended.",
   items: [
     {
       company: "Levels Living",
@@ -58,12 +56,32 @@ const experience = {
 
 const education = {
   title: "My Education",
-  description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ex vero, inventore.",
+  description: "Formal and Informal Educations",
   items: [
     {
       institution: "Bina Nusantara University",
       degree: "Bachelor of Computer Science",
       duration: "2020 - 2024",
+    },
+    {
+      institution: "Algorithm Bootcamp",
+      degree: "Object Oriented Programming",
+      duration: "2022",
+    },
+    {
+      institution: "Algorithm Bootcamp",
+      degree: "Data Structure Introductions",
+      duration: "2021",
+    },
+    {
+      institution: "Algorithm Bootcamp",
+      degree: "Algorithm and Programming",
+      duration: "2020",
+    },
+    {
+      institution: "Santo Kristoforus 2 High School",
+      degree: "Science Major",
+      duration: "2017 - 2020",
     },
   ]
 }
@@ -81,6 +99,8 @@ const skills = {
     { icon: <FaNodeJs />, name: "NodeJs" },
     { icon: <FaSwift />, name: "Swift" },
     { icon: <FaFigma />, name: "Figma" },
+    { icon: <FaDigitalOcean />, name: "Digital Ocean" },
+    { icon: <FaGitAlt />, name: "Git" },
     { icon: <SiTailwindcss />, name: "TailwindCSS" },
     { icon: <SiChakraui />, name: "ChakraUI" },
     { icon: <SiNextdotjs />, name: "Next.JS" },
@@ -163,11 +183,49 @@ const Resume = () => {
             </TabsContent>
           {/* experience */}
             <TabsContent value="skills" className="w-full">
-              Skills
+              <div className="flex flex-col gap-[30px]">
+                <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                  <h3 className="text-4xl font-bold">{skills.title}</h3>
+                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{skills.description}</p>
+                </div>
+                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
+                  {skills.items.map((skill, index) => {
+                    return (
+                      <li key={index} className="">
+                        <TooltipProvider delayDuration={100}>
+                          <Tooltip>
+                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center">
+                              <div className="text-6xl group-hover:text-accent-default transition-all duration-300">
+                                {skill.icon}
+                              </div>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>{skill.name}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
             </TabsContent>
           {/* experience */}
-            <TabsContent value="about" className="w-full">
-              About Me
+            <TabsContent value="about" className="w-full text-center xl:text-left">
+              <div className="flex flex-col gap-[30px]">
+                <h3 className="text-4xl font-bold"> {about.title} </h3>
+                <p className="text-white/60"> {about.description} </p>
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] xl:max-w-[740px] mx-auto xl:mx-0">
+                  {about.info.map((info, index) => {
+                    return (
+                      <li key={index} className="flex items-center justify-center xl:justify-start gap-4">
+                        <span className="text-white/60">{info.fieldName}</span>
+                        <span className="">{info.fieldValue}</span>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
             </TabsContent>
           </div>
 
