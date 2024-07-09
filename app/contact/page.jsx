@@ -8,6 +8,8 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectLa
 import {FaPhoneAlt, FaEnvelope, FaMapMarkerAlt} from "react-icons/fa"
 
 import { motion } from "framer-motion"
+import emailjs from "emailjs-com"
+import { useState } from "react"
 
 const info = [
   { 
@@ -32,12 +34,58 @@ const info = [
   },
 ]
 
-const sendEmail = () => {
-  emailFormat = ""
-  alert("Email sent!")
-}
-
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstname: '',
+    lastname: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: ''
+  });
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+  
+  const handleServiceChange = (value) => {
+    setFormData({
+      ...formData,
+      service: value
+    });
+  };
+  
+  const sendEmail = (e) => {
+    e.preventDefault();
+  
+    const templateParams = {
+      firstname: formData.firstname,
+      lastname: formData.lastname,
+      email: formData.email,
+      phone: formData.phone,
+      service: formData.service,
+      message: formData.message
+    };
+
+    emailjs.send(
+      process.env.NEXT_PUBLIC_SERVICE_ID, 
+      process.env.NEXT_PUBLIC_TEMPLATE_ID,{
+        ...templateParams
+      },
+      process.env.NEXT_PUBLIC_USER_ID).
+      then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert("EMAIL SENT")
+      }).catch((err) => {
+        console.log('FAILED...', err);
+        alert("SEND EMAIL FAILED")
+      });
+  };
+
   return (
     <motion.section
       initial={{opacity: 0}}
@@ -51,44 +99,50 @@ const Contact = () => {
         <div className="flex flex-col xl:flex-row gap-[30px]">
           {/* form */}
           <div className="xl:h-[54%] order-2 xl:order-none">
-            <form action="" className="flex flex-col gap-6 p-10 bg-secondary rounded-xl">
-              <h3 className="text-4xl text-accent-default">
-                Let's Work Together
-              </h3>
-              <p className="text-white/60">
-                Let's connect and explore how we can achieve great things together!
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="Firstname" />
-                <Input type="lastname" placeholder="Lastname" />
-                <Input type="email" placeholder="Email" />
-                <Input type="phone" placeholder="Phone Number" />
-              </div>
-              {/* select */}
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select a Service"/>
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Select a Service</SelectLabel>
-                    <SelectItem value="freelance">Freelance Software Development</SelectItem>
-                    <SelectItem value="recruitment">Company Recruitment</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
+          <form onSubmit={sendEmail} className="flex flex-col gap-6 p-10 bg-secondary rounded-xl">
+            <h3 className="text-4xl text-accent-default">
+              Let's Work Together
+            </h3>
+            <p className="text-white/60">
+              Let's connect and explore how we can achieve great things together!
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Input type="text" name="firstname" placeholder="Firstname" onChange={handleChange} className="input" />
+              <Input type="text" name="lastname" placeholder="Lastname" onChange={handleChange} className="input" />
+              <Input type="email" name="email" placeholder="Email" onChange={handleChange} className="input" />
+              <Input type="text" name="phone" placeholder="Phone Number" onChange={handleChange} className="input" />
+            </div>
+            {/* select */}
+            <Select onValueChange={handleServiceChange}>
+              <SelectTrigger>
+                <SelectValue placeholder="Select a Service" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Select a Service</SelectLabel>
+                  <SelectItem value="Freelance Software Development">Freelance Software Development</SelectItem>
+                  <SelectItem value="Company Recruitment">Company Recruitment</SelectItem>
+                  <SelectItem value="Other">Other</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
 
-              {/* textarea */}
-              <Textarea 
-                className="h-[200px]"
-                placeholder="Type Your Message Here"
-              />
-              {/* button */}
-              <Button type="submit" className="max-w-40">
-                Send Message
-              </Button>
-            </form>
+            {/* textarea */}
+            <Textarea 
+              name="message"
+              className="h-[200px]"
+              placeholder="Type Your Message Here"
+              onChange={handleChange}
+            />
+
+            {/* button */}
+            <Button 
+              type="submit" 
+              className="max-w-40"
+            >
+              Send Message
+            </Button>
+          </form>
           </div>
           {/* info */}
           <div className="flex flex-1 items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
