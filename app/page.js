@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { FiDownload } from "react-icons/fi"
 
@@ -5,6 +7,17 @@ import { FiDownload } from "react-icons/fi"
 import Social from "@/components/Social"
 import Photo from "@/components/Photo"
 import Stats from "@/components/Stats"
+
+const downloadResume = () => {
+  const cv = "/documents/CV.pdf";
+  const link = document.createElement("a");
+  link.href = cv;
+  link.download = "CV.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
 
 const Home = () => {
   return (
@@ -23,7 +36,11 @@ const Home = () => {
             </p>
 
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <Button variant="outline"className="uppercase flex items-center gap-2">
+              <Button 
+                variant="outline"
+                className="uppercase flex items-center gap-2"
+                onClick={downloadResume}
+              >
                 <span>
                   Download CV
                 </span>
