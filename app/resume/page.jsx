@@ -10,7 +10,7 @@ import { motion } from "framer-motion"
 
 const about = {
   title: "About Me",
-  description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ex vero, inventore.",
+  description: "I'm a computer science graduate with a background in frontend and iOS development, fueled by a passion for software development and artificial intelligence. As a hackathon champion at Major League Hacking, I've honed my skills in Node.js. I’ve also sharpened my other skills such as Python and Swift throughout projects and working experiences. My journey reflects a commitment to staying at the forefront of technology, and I thrive on crafting seamless user experiences and delving into the intricacies of iOS development. I also have a Common Vulnerabilities and Exposures (CVE) showcase my dedication to understanding and addressing security issues in the landscape of technology with my secure source code review and analysis. My enthusiasm for artificial intelligence drives me to explore innovative solutions, and I am eager to contribute my creativity and problem-solving mindset to your team's success. I'm a lifelong learner who appreciates for activities to do that will push me to keep learning ",
   info: [
     {fieldName: "Name", fieldValue: "Andreas Alexander"},
     {fieldName: "Phone", fieldValue: "(+62) 878 7819 7989"},
@@ -88,7 +88,7 @@ const education = {
 
 const skills = {
   title: "My Skills",
-  description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ex vero, inventore.",
+  description: "Showcases of my hardskills about technologies I've used previously.",
   items: [
     { icon: <FaHtml5 />, name: "HTML5" },
     { icon: <FaCss3 />, name: "CSS3" },
