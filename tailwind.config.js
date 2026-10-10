@@ -20,17 +20,17 @@ module.exports = {
       xl: "1200px",
     },
     fontFamily: {
-      primary: "var(--font-jetbrainsMono)",
+      primary: "var(--font-primary)",
     },
     extend: {
       colors: {
-        primary: "#1C1C22",
-        secondary: "#27272C",
+        primary: "#1D2168",
+        secondary: "#282D85",
         accent: {
-          default: "#0078D7",
-          hover: "#3FAAFF"
+          default: "#F6BB3A",
+          hover: "#FFD470"
         },
-        animation: "#002E57"
+        animation: "#282D85"
       },
       keyframes: {
         "accordion-down": {

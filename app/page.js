@@ -1,64 +1,59 @@
-"use client"
-
-import { Button } from "@/components/ui/button"
-import { FiDownload } from "react-icons/fi"
+import Image from "next/image"
 
 // components
-import Social from "@/components/Social"
-import Photo from "@/components/Photo"
-import Stats from "@/components/Stats"
-
-const downloadResume = () => {
-  const cv = "/documents/CV.pdf";
-  const link = document.createElement("a");
-  link.href = cv;
-  link.download = "CV.pdf";
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
-
+import ProblemComposer from "@/components/ProblemComposer"
+import { ServicesBand, Thread, ClosingBand } from "@/components/HomeSections"
 
 const Home = () => {
   return (
-    <section className="h-full">
-      <div className="container mx-auto h-full">
-        <div className="flex flex-col xl:flex-row items-center justify justify-between xl:pt-8 xl:pb-24">
-          <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">
-              Software Developer
-            </span>
-            <h1 className="h1 mb-6">
-              Hello, I'm <br /> <span className="text-accent-default"> Andreas Alexander </span>
+    <>
+      <section className="pb-16 xl:pb-24">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-8 xl:grid-cols-12 xl:items-end">
+            <h1 className="text-[clamp(2.75rem,9vw,5.5rem)] font-extrabold leading-[0.95] tracking-[-0.045em] xl:col-span-8">
+              Tell me what is slowing you down.
             </h1>
-            <p className="max-w-[500px] mb-9 text-white/80">
-              I'm a software developer with a passion for developing frontend and backend programs depending on the user needs. I also have experience in analyzing data and developing machine learning models.  
-            </p>
-
-            <div className="flex flex-col xl:flex-row items-center gap-8">
-              <Button 
-                variant="outline"
-                className="uppercase flex items-center gap-2"
-                onClick={downloadResume}
-              >
-                <span>
-                  Download CV
-                </span>
-                <FiDownload className="text-xl" />
-              </Button>
-              <div className="max-w-[500px] mb-9 xl:mb-0">
-                <Social containerStyles="flex gap-6" iconStyles="w-9 h-9 border border-accent-default rounded-full flex justify-center items-center text-accent-default text-base hover:bg-accent-default hover:text-primary hover: transition-all duration-300" />
-              </div>
+            <div className="flex items-center gap-4 xl:col-span-4 xl:pb-2">
+              <Image
+                src="/assets/profile.png"
+                priority
+                width={144}
+                height={144}
+                alt=""
+                className="h-20 w-20 shrink-0 rounded-full bg-black grayscale"
+              />
+              <p className="text-lg font-medium leading-snug">
+                I am Andreas Alexander, a software developer in Jakarta. I build the app or tool that fixes it.
+              </p>
             </div>
-
           </div>
-          <div className="order-1 xl:order-none mb-8 xl:mb-0">
-            <Photo />
+
+          <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-10 xl:mt-14 xl:grid-cols-12 xl:items-start">
+            <figure className="xl:col-span-7">
+              <Image
+                src="/assets/work/yatapos-mockup.png"
+                priority
+                width={1608}
+                height={978}
+                sizes="(min-width: 1200px) 670px, 100vw"
+                className="h-auto w-full rounded-[28px] rounded-bl-md"
+                alt="YataPOS cashier screen on a counter tablet, beside a barcode scanner and a receipt printer"
+              />
+              <figcaption className="mt-4 max-w-[34em] text-lg font-medium leading-snug">
+                YataPOS, a point of sale app I built. Product catalog, barcode scanning, a cart, and cash, card, and e-wallet payments.
+              </figcaption>
+            </figure>
+            <div className="xl:col-span-5">
+              <ProblemComposer />
+            </div>
           </div>
         </div>
-      </div>
-      <Stats />
-    </section>
+      </section>
+
+      <ServicesBand />
+      <Thread />
+      <ClosingBand />
+    </>
   )
 }
 

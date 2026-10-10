@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 960" width="1600" height="960" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<rect width="1600" height="960" fill="#F3F4F1"/>
+<text x="56" y="84" fill="#14181F" font-size="38" font-weight="800">Weekly price report</text>
+<text x="56" y="120" fill="#5B6472" font-size="20">1,240 products scraped from 3 online stores, week 1 to week 12</text>
+<rect x="1340" y="52" width="204" height="44" rx="22" fill="#14181F"/><text x="1442" y="81" fill="#fff" font-size="18" font-weight="600" text-anchor="middle">Download as Excel</text>
+<rect x="56" y="160" width="940" height="440" rx="14" fill="#fff" stroke="#DADDD6" stroke-width="1.5"/>
+<text x="84" y="206" fill="#14181F" font-size="21" font-weight="700">Average price of the same basket, in thousand rupiah</text>
+<path d="M140 536.0h690" stroke="#E7E9E3" stroke-width="1.5"/>
+<text x="126" y="542.0" fill="#5B6472" font-size="16" text-anchor="end">180</text>
+<path d="M140 442.6666666666667h690" stroke="#E7E9E3" stroke-width="1.5"/>
+<text x="126" y="448.6666666666667" fill="#5B6472" font-size="16" text-anchor="end">200</text>
+<path d="M140 349.33333333333337h690" stroke="#E7E9E3" stroke-width="1.5"/>
+<text x="126" y="355.33333333333337" fill="#5B6472" font-size="16" text-anchor="end">220</text>
+<path d="M140 256.0h690" stroke="#E7E9E3" stroke-width="1.5"/>
+<text x="126" y="262.0" fill="#5B6472" font-size="16" text-anchor="end">240</text>
+<path d="M140.0 386.7 L202.7 386.7 L265.5 377.3 L328.2 377.3 L390.9 372.7 L453.6 372.7 L516.4 363.3 L579.1 358.7 L641.8 358.7 L704.5 349.3 L767.3 344.7 L830.0 340.0" stroke="#1F4FD8" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="830.0" cy="340.0" r="6" fill="#1F4FD8"/>
+<text x="846.0" y="346.0" fill="#1F4FD8" font-size="18" font-weight="700">Your store 222</text>
+<path d="M140.0 405.3 L202.7 410.0 L265.5 400.7 L328.2 414.7 L390.9 424.0 L453.6 419.3 L516.4 428.7 L579.1 438.0 L641.8 433.3 L704.5 442.7 L767.3 447.3 L830.0 452.0" stroke="#D9730D" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="830.0" cy="452.0" r="6" fill="#D9730D"/>
+<text x="846.0" y="458.0" fill="#D9730D" font-size="18" font-weight="700">Store A 198</text>
+<path d="M140.0 358.7 L202.7 354.0 L265.5 354.0 L328.2 344.7 L390.9 340.0 L453.6 330.7 L516.4 335.3 L579.1 321.3 L641.8 316.7 L704.5 307.3 L767.3 302.7 L830.0 293.3" stroke="#3F8F5F" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="830.0" cy="293.3" r="6" fill="#3F8F5F"/>
+<text x="846.0" y="299.3" fill="#3F8F5F" font-size="18" font-weight="700">Store B 232</text>
+<text x="140.0" y="568" fill="#5B6472" font-size="16" text-anchor="middle">W1</text>
+<text x="265.5" y="568" fill="#5B6472" font-size="16" text-anchor="middle">W3</text>
+<text x="390.9" y="568" fill="#5B6472" font-size="16" text-anchor="middle">W5</text>
+<text x="516.4" y="568" fill="#5B6472" font-size="16" text-anchor="middle">W7</text>
+<text x="641.8" y="568" fill="#5B6472" font-size="16" text-anchor="middle">W9</text>
+<text x="767.3" y="568" fill="#5B6472" font-size="16" text-anchor="middle">W11</text>
+<text x="830.0" y="568" fill="#5B6472" font-size="16" text-anchor="middle">W12</text>
+<rect x="1028" y="160" width="516" height="440" rx="14" fill="#fff" stroke="#DADDD6" stroke-width="1.5"/>
+<text x="1056" y="206" fill="#14181F" font-size="21" font-weight="700">What changed this week</text>
+<circle cx="1066" cy="253" r="6" fill="#1F4FD8"/>
+<text x="1088" y="260" fill="#14181F" font-size="20" font-weight="700">Store A is now 11% cheaper than you</text>
+<text x="1088" y="290" fill="#5B6472" font-size="18">Gap was 2% in week 1.</text>
+<circle cx="1066" cy="337" r="6" fill="#1F4FD8"/>
+<text x="1088" y="344" fill="#14181F" font-size="20" font-weight="700">38 products priced above both rivals</text>
+<text x="1088" y="374" fill="#5B6472" font-size="18">Mostly kitchenware and stationery.</text>
+<circle cx="1066" cy="421" r="6" fill="#1F4FD8"/>
+<text x="1088" y="428" fill="#14181F" font-size="20" font-weight="700">Store B is up 6% since week 1</text>
+<text x="1088" y="458" fill="#5B6472" font-size="18">You have room on 204 shared products.</text>
+<circle cx="1066" cy="505" r="6" fill="#1F4FD8"/>
+<text x="1088" y="512" fill="#14181F" font-size="20" font-weight="700">17 products went out of stock at Store A</text>
+<text x="1088" y="542" fill="#5B6472" font-size="18">List attached in the Excel file.</text>
+<rect x="56" y="632" width="1488" height="280" rx="14" fill="#fff" stroke="#DADDD6" stroke-width="1.5"/>
+<text x="84" y="678" fill="#14181F" font-size="21" font-weight="700">Biggest price gaps</text>
+<text x="84" y="724" fill="#5B6472" font-size="17" font-weight="600" text-anchor="start">Product</text>
+<text x="616" y="724" fill="#5B6472" font-size="17" font-weight="600" text-anchor="start">Category</text>
+<text x="956" y="724" fill="#5B6472" font-size="17" font-weight="600" text-anchor="end">Your price</text>
+<text x="1126" y="724" fill="#5B6472" font-size="17" font-weight="600" text-anchor="end">Store A</text>
+<text x="1296" y="724" fill="#5B6472" font-size="17" font-weight="600" text-anchor="end">Store B</text>
+<text x="1516" y="724" fill="#5B6472" font-size="17" font-weight="600" text-anchor="end">Gap to cheapest</text>
+<path d="M84 740h1432" stroke="#DADDD6" stroke-width="1.5"/>
+<text x="84" y="780" fill="#14181F" font-size="19" font-weight="700" text-anchor="start">Rice cooker 1.8 L</text>
+<text x="616" y="780" fill="#14181F" font-size="19" font-weight="400" text-anchor="start">Kitchenware</text>
+<text x="956" y="780" fill="#14181F" font-size="19" font-weight="400" text-anchor="end">Rp489.000</text>
+<text x="1126" y="780" fill="#14181F" font-size="19" font-weight="400" text-anchor="end">Rp415.000</text>
+<text x="1296" y="780" fill="#14181F" font-size="19" font-weight="400" text-anchor="end">Rp499.000</text>
+<text x="1516" y="780" fill="#B3261E" font-size="19" font-weight="700" text-anchor="end">+17.8%</text>
+<text x="84" y="826" fill="#14181F" font-size="19" font-weight="700" text-anchor="start">Ballpoint pen, box of 12</text>
+<text x="616" y="826" fill="#14181F" font-size="19" font-weight="400" text-anchor="start">Stationery</text>
+<text x="956" y="826" fill="#14181F" font-size="19" font-weight="400" text-anchor="end">Rp36.000</text>
+<text x="1126" y="826" fill="#14181F" font-size="19" font-weight="400" text-anchor="end">Rp31.500</text>
+<text x="1296" y="826" fill="#14181F" font-size="19" font-weight="400" text-anchor="end">Rp38.000</text>
+<text x="1516" y="826" fill="#B3261E" font-size="19" font-weight="700" text-anchor="end">+14.3%</text>
+<text x="84" y="872" fill="#14181F" font-size="19" font-weight="700" text-anchor="start">LED desk lamp</text>
+<text x="616" y="872" fill="#14181F" font-size="19" font-weight="400" text-anchor="start">Home</text>
+<text x="956" y="872" fill="#14181F" font-size="19" font-weight="400" text-anchor="end">Rp175.000</text>
+<text x="1126" y="872" fill="#14181F" font-size="19" font-weight="400" text-anchor="end">Rp159.000</text>
+<text x="1296" y="872" fill="#14181F" font-size="19" font-weight="400" text-anchor="end">Rp182.000</text>
+<text x="1516" y="872" fill="#B3261E" font-size="19" font-weight="700" text-anchor="end">+10.1%</text>
+</svg>

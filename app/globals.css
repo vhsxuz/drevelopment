@@ -4,23 +4,27 @@
   
 @layer base {
   body {
-    @apply font-primary bg-primary text-white leading-loose;
+    @apply font-primary bg-primary text-white leading-relaxed;
   }
   .h1 {
-    @apply text-[48px] xl:text-[64px] leading-[1.1] font-semibold;
+    @apply text-[48px] xl:text-[64px] leading-[1.1] font-bold tracking-tight;
   }
   .h2 {
-    @apply text-[36px] xl:text-[42px] leading-[1.1] font-semibold;
+    @apply text-[36px] xl:text-[42px] leading-[1.1] font-bold tracking-tight;
   }
   .h3 {
-    @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
+    @apply text-[20px] xl:text-[24px] leading-[1.1] font-bold tracking-tight;
+  }
+  :focus-visible {
+    outline: 2px solid #FFD470;
+    outline-offset: 3px;
   }
   .text-outline {
     -webkit-text-stroke: 1px #FFFFFF
   }
   
   .text-outline-hover {
-    -webkit-text-stroke: 1px #0078D7
+    -webkit-text-stroke: 1px #F6BB3A
   }
 } 
 

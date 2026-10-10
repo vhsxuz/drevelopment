@@ -2,6 +2,7 @@ import Link from "next/link";
 import Nav from "./Nav";
 import { Button } from "./ui/button";
 import MobileNav from "./MobileNav";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 const Header = () => {
   return (
@@ -10,19 +11,19 @@ const Header = () => {
 
       {/* Icon */}
         <Link href="/">
-        <h1 className="text-4xl font-semibold">
-          Andreas <span className="text-accent-default">.</span>
-        </h1>
+        <span className="text-xl font-extrabold tracking-tight">
+          Andreas Alexander
+        </span>
         </Link>
 
         {/* Navigations */}
         <div className="hidden xl:flex items-center gap-8">
           <Nav />
-          <Link href="/contact">
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
           <Button>
-            Hire Me
+            Chat on WhatsApp
           </Button>
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Navigations */}

@@ -18,10 +18,10 @@ const Photo = () => {
           <Image 
             src="/assets/profile.png" 
             priority
-            quality={100}
             fill
+            sizes="(min-width: 1200px) 498px, 250px"
             alt=""
-            className="object-contain"
+            className="object-contain grayscale"
           />
         </div>
       </motion.div>

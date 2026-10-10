@@ -5,17 +5,19 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectLabel, SelectValue } from "@/components/ui/select"
 
-import {FaPhoneAlt, FaEnvelope, FaMapMarkerAlt} from "react-icons/fa"
+import {FaWhatsapp, FaEnvelope, FaMapMarkerAlt} from "react-icons/fa"
 
 import { motion } from "framer-motion"
-import emailjs from "emailjs-com"
 import { useState } from "react"
+
+import { WHATSAPP_URL } from "@/lib/contact"
 
 const info = [
   { 
-    icon: <FaPhoneAlt />, 
-    title: "Phone",
-    description: "(+62) 878 7819 7989"
+    icon: <FaWhatsapp />, 
+    title: "WhatsApp",
+    description: "+62 878 7819 7989",
+    href: WHATSAPP_URL
   },
   { 
     icon: <FaEnvelope />, 
@@ -38,8 +40,6 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     firstname: '',
     lastname: '',
-    email: '',
-    phone: '',
     service: '',
     message: ''
   });
@@ -59,31 +59,17 @@ const Contact = () => {
     });
   };
   
-  const sendEmail = (e) => {
+  const sendWhatsApp = (e) => {
     e.preventDefault();
-  
-    const templateParams = {
-      firstname: formData.firstname,
-      lastname: formData.lastname,
-      email: formData.email,
-      phone: formData.phone,
-      service: formData.service,
-      message: formData.message
-    };
 
-    emailjs.send(
-      process.env.NEXT_PUBLIC_SERVICE_ID, 
-      process.env.NEXT_PUBLIC_TEMPLATE_ID,{
-        ...templateParams
-      },
-      process.env.NEXT_PUBLIC_USER_ID).
-      then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
-        alert("EMAIL SENT")
-      }).catch((err) => {
-        console.log('FAILED...', err);
-        alert("SEND EMAIL FAILED")
-      });
+    const name = [formData.firstname, formData.lastname].filter(Boolean).join(" ");
+    const text = [
+      name ? `Hello Andreas, I'm ${name}.` : "Hello Andreas,",
+      formData.service ? `Service: ${formData.service}` : null,
+      formData.message
+    ].filter(Boolean).join("\n");
+
+    window.open(`${WHATSAPP_URL}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -99,7 +85,7 @@ const Contact = () => {
         <div className="flex flex-col xl:flex-row gap-[30px]">
           {/* form */}
           <div className="xl:h-[54%] order-2 xl:order-none">
-          <form onSubmit={sendEmail} className="flex flex-col gap-6 p-10 bg-secondary rounded-xl">
+          <form onSubmit={sendWhatsApp} className="flex flex-col gap-6 p-10 bg-secondary rounded-xl">
             <h3 className="text-4xl text-accent-default">
               Let's Work Together
             </h3>
@@ -109,8 +95,6 @@ const Contact = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Input type="text" name="firstname" placeholder="Firstname" onChange={handleChange} className="input" />
               <Input type="text" name="lastname" placeholder="Lastname" onChange={handleChange} className="input" />
-              <Input type="email" name="email" placeholder="Email" onChange={handleChange} className="input" />
-              <Input type="text" name="phone" placeholder="Phone Number" onChange={handleChange} className="input" />
             </div>
             {/* select */}
             <Select onValueChange={handleServiceChange}>
@@ -138,9 +122,10 @@ const Contact = () => {
             {/* button */}
             <Button 
               type="submit" 
-              className="max-w-40"
+              className="max-w-60 flex items-center gap-2"
             >
-              Send Message
+              <FaWhatsapp className="text-xl" />
+              Chat on WhatsApp
             </Button>
           </form>
           </div>
@@ -155,7 +140,13 @@ const Contact = () => {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl">{item.title}</h3>
-                      <p className="text-white/60">{item.description}</p>
+                      {item.href ? (
+                        <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-accent-default transition-all">
+                          {item.description}
+                        </a>
+                      ) : (
+                        <p className="text-white/60">{item.description}</p>
+                      )}
                     </div>
                   </li>
                 );
