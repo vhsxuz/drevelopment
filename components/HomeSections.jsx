@@ -126,9 +126,9 @@ export const Thread = () => {
           </figure>
           <figure>
             <Image
-              src="/assets/work/php.png"
-              width={3840}
-              height={2160}
+              src="/assets/work/mai-boutique.jpg"
+              width={2400}
+              height={1350}
               sizes="(min-width: 768px) 50vw, 100vw"
               className="aspect-[16/9] w-full rounded-[28px] rounded-bl-md object-cover"
               alt="Mai Boutique online store open on a laptop and a phone"
